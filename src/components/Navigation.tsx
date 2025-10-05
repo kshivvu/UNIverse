@@ -1,10 +1,15 @@
 // import React from 'react'
+import {motion, useScroll, useTransform} from 'framer-motion'
 import { University } from "lucide-react";
+// import { useEffect } from 'react';
 const navItems:string[] = ["Explore", "Join a Community", "Find Your", "Engage with"];
 const Navigation = () => {
+  const {scrollYProgress}=useScroll();
+  const lineWidth=useTransform(scrollYProgress , [0,1] , ['0%','100%']);
   return (
-    <nav className="flex justify-between py-4 px-12 shadow-md items-center"> 
-      <div className="font-black  flex justify-center items-center text-xl">
+    <nav className="sticky top-0 overflow-hidden backdrop-blur-lg shadow-lg"> 
+      <div className='flex justify-between py-4 px-12  items-center'>
+        <div className="font-black  flex justify-center items-center text-xl">
         <University className="inline mr-2 mb-1 " />
         Connect with Colleges
       </div>
@@ -24,6 +29,8 @@ const Navigation = () => {
             Join Now
         </button>
       </div>
+      </div>
+      <motion.div className='absolute bottom-0 h-1 left-0 bg-blue-500 w-screen  ' style={{width:lineWidth}}/>
     </nav>
   );
 };
