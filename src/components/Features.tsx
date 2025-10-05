@@ -1,5 +1,5 @@
 // import React from 'react'
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Landmark } from "lucide-react";
 import { GraduationCap } from "lucide-react";
 import { Globe } from "lucide-react";
@@ -39,7 +39,7 @@ const Cards = [
   },
 ];
 
-const ParentVariants = {
+const ParentVariants:Variants = {
   initial: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -51,7 +51,7 @@ const ParentVariants = {
   exit: { opacity: 0, transition: { duration: 0.5 } },
 };
 
-const childVariants = {
+const childVariants:Variants = {
   initial: { opacity: 0, y: 0 },
   visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
 };
@@ -70,7 +70,6 @@ const Features = () => {
       <motion.div
         variants={ParentVariants}
         initial="initial"
-        // animate={ "visible"}
         exit="exit"
         whileInView={"visible"}
         className="flex flex-wrap justify-center items-center space-x-4 "
