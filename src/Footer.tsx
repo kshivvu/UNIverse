@@ -114,9 +114,12 @@ const Footer = () => {
           </h1>
 
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            initial={{opacity:0,x:100}}
+            whileHover={{ scale: 1.05}}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center md:justify-start space-x-2 py-3 px-5 bg-blue-500 text-white rounded-lg transition-transform duration-200"
+            whileInView={{opacity:1,x:0}}
+            transition={{delay:0.5,duration:0.5}}
+            className="flex items-center justify-center md:justify-start space-x-2 py-3 px-5 bg-blue-500 text-white rounded-lg transition-transform duration-200 w-full"
           >
             <Apple className="w-8 h-8 text-black" />
             <div className="flex flex-col space-y-0 text-left">
@@ -126,8 +129,11 @@ const Footer = () => {
           </motion.button>
 
           <motion.button
+          initial={{x:100 , opacity:0}}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            whileInView={{x:0 ,opacity:1}}
+            transition={{delay:0.5,duration:0.5}}
             className="flex items-center justify-center md:justify-start space-x-2 py-3 px-5 bg-blue-500 text-white rounded-lg transition-transform duration-200"
           >
             <Play className="w-10 h-10 text-black" />
