@@ -2,7 +2,7 @@
 import { Users } from 'lucide-react';
 const HeroSection = () => {
   return (
-    <section className="flex flex-col tems-center justify-between  my-20 space-y-8 ">
+    <section className="flex flex-col tems-center justify-between  my-20 mb-25 space-y-8 ">
         <div className="  flex justify-center  font-black">
             <Users className="text-center" size={128}/>
         </div>
